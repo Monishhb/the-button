@@ -9,10 +9,11 @@
   --ui-accent: #e3e2db;
   --ui-accent-strong: #c7c6bd;
   --focus: #191916;
+  --brand-accent: #e53935;
   --shadow-soft: rgba(25, 25, 22, 0.1);
   --shadow-panel: rgba(25, 25, 22, 0.18);
   --button-size: 320px;
-  --button-radius: 16px;
+  --button-radius: 200px;
   --button-depth: 6px;
   --button-color: #e53935;
   --button-highlight: #ed6b68;
@@ -42,6 +43,7 @@
     --ui-accent: #232320;
     --ui-accent-strong: #383834;
     --focus: #edede8;
+    --brand-accent: #e53935;
     --shadow-soft: rgba(0, 0, 0, 0.4);
     --shadow-panel: rgba(0, 0, 0, 0.55);
     --button-ambient-shadow: rgba(0, 0, 0, 0.5);
@@ -61,6 +63,7 @@
   --ui-accent: #232320;
   --ui-accent-strong: #383834;
   --focus: #edede8;
+  --brand-accent: #e53935;
   --shadow-soft: rgba(0, 0, 0, 0.4);
   --shadow-panel: rgba(0, 0, 0, 0.55);
   --button-ambient-shadow: rgba(0, 0, 0, 0.5);
@@ -128,13 +131,55 @@ select:focus-visible {
   display: none !important;
 }
 
+.brand-lockup {
+  position: fixed;
+  z-index: 25;
+  top: 25px;
+  left: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  color: var(--brand-accent);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-name {
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: 0.34em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .toolbar {
   position: fixed;
   z-index: 20;
   right: 0;
   bottom: 0;
   left: 0;
-  min-height: 58px;
+  min-height: 62px;
   padding: 4px max(12px, env(safe-area-inset-right)) max(4px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
   border-top: 1px solid var(--ui-accent);
   background: var(--background);
@@ -146,7 +191,7 @@ select:focus-visible {
   justify-content: center;
   gap: 2px;
   max-width: 520px;
-  min-height: 50px;
+  min-height: 54px;
   margin: 0 auto;
 }
 
@@ -159,7 +204,7 @@ select:focus-visible {
   justify-content: center;
   gap: 3px;
   min-width: 0;
-  min-height: 44px;
+  min-height: 48px;
   padding: 6px 8px;
   border: 0;
   border-radius: 6px;
@@ -167,9 +212,9 @@ select:focus-visible {
   color: var(--text-tertiary);
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 0.56rem;
+  font-size: 0.62rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: color 160ms ease;
 }
@@ -199,8 +244,8 @@ select:focus-visible {
 }
 
 .tool-icon {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
@@ -215,11 +260,93 @@ select:focus-visible {
 }
 
 .stage {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 24px 16px calc(80px + env(safe-area-inset-bottom));
+  padding: 100px 20px calc(94px + env(safe-area-inset-bottom));
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 1200px);
+  min-height: 100%;
+}
+
+.hero-intro {
+  width: min(100%, 900px);
+  text-align: center;
+}
+
+.hero-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.3em;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-accent {
+  color: var(--brand-accent);
+}
+
+.hero-support {
+  margin: 20px auto 0;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+.site-footer {
+  width: min(100%, 440px);
+  margin-top: auto;
+  padding-top: 52px;
+  text-align: center;
+}
+
+.footer-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.footer-rule::before,
+.footer-rule::after {
+  width: 96px;
+  height: 1px;
+  background: var(--ui-accent-strong);
+  content: "";
+  opacity: 0.65;
+}
+
+.footer-rule span {
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--brand-accent);
+  border-radius: 50%;
+}
+
+.site-footer p {
+  margin: 18px 0 0;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-heart {
+  color: var(--brand-accent);
 }
 
 .button-area {
@@ -228,6 +355,7 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   min-width: 0;
+  margin-top: 52px;
 }
 
 .button-housing {
@@ -918,20 +1046,25 @@ select:focus-visible {
   .toolbar {
     top: 0;
     bottom: auto;
-    min-height: 58px;
-    padding: 4px max(20px, env(safe-area-inset-right)) 4px max(20px, env(safe-area-inset-left));
+    min-height: 72px;
+    padding: 8px max(24px, env(safe-area-inset-right)) 8px max(24px, env(safe-area-inset-left));
     border-top: 0;
     border-bottom: 1px solid var(--ui-accent);
   }
 
   .stage {
-    padding: 80px 24px 32px;
+    padding: clamp(156px, 25.5vh, 230px) 24px 28px;
   }
 
-  .counter { margin-top: 26px; }
+  .counter { margin-top: 22px; }
 }
 
 @media (min-width: 1025px) {
+  .toolbar {
+    min-height: 112px;
+    padding: 20px max(42px, env(safe-area-inset-right)) 20px max(42px, env(safe-area-inset-left));
+  }
+
   .toolbar-inner {
     justify-content: flex-end;
     max-width: none;
@@ -939,8 +1072,10 @@ select:focus-visible {
 
   .tool-button {
     flex: 0 0 auto;
-    min-width: 72px;
-    padding-inline: 14px;
+    min-width: 92px;
+    min-height: 64px;
+    padding-inline: 12px;
+    font-size: 0.68rem;
   }
 }
 
@@ -957,22 +1092,84 @@ select:focus-visible {
 @media (max-height: 430px) and (orientation: landscape) {
   .stage {
     padding-top: 16px;
-    padding-bottom: 68px;
+    padding-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-support {
+    margin-top: 7px;
+    font-size: 0.65rem;
+  }
+
+  .button-area {
+    margin-top: 20px;
+  }
+
+  .press-button {
+    width: max(150px, min(var(--button-size), calc(100vw - 56px), calc(100vh - 230px), 400px));
   }
 
   .counter {
-    margin-top: 14px;
+    margin-top: 8px;
+  }
+
+  .site-footer {
+    display: none;
   }
 }
 
 @media (min-width: 640px) and (max-height: 430px) and (orientation: landscape) {
+  .toolbar {
+    min-height: 64px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .toolbar-inner {
+    justify-content: flex-end;
+    max-width: none;
+  }
+
+  .tool-button {
+    flex: 0 0 auto;
+    min-width: 72px;
+    min-height: 48px;
+    padding-inline: 8px;
+    font-size: 0.56rem;
+  }
+
   .stage {
-    padding-top: 64px;
-    padding-bottom: 56px;
+    padding-top: 76px;
+    padding-bottom: 20px;
   }
 }
 
 @media (max-width: 639px) {
+  .brand-lockup {
+    top: 18px;
+    left: 20px;
+    gap: 9px;
+  }
+
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.76rem;
+    letter-spacing: 0.26em;
+  }
+
+  .brand-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.13em;
+  }
+
   .panel {
     top: auto;
     right: 0;
@@ -1013,6 +1210,42 @@ select:focus-visible {
 
   .panel-content {
     padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 639px) and (max-height: 700px) and (orientation: portrait) {
+  .stage {
+    padding-top: 86px;
+    padding-bottom: 78px;
+  }
+
+  .hero-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-accent {
+    white-space: nowrap;
+  }
+
+  .hero-support {
+    display: none;
+  }
+
+  .button-area {
+    margin-top: 24px;
+  }
+
+  .press-button {
+    width: max(150px, min(var(--button-size), calc(100vw - 56px), 230px, 52vh));
+  }
+
+  .counter {
+    margin-top: 16px;
+  }
+
+  .site-footer {
+    display: none;
   }
 }
 

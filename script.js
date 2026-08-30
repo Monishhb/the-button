@@ -7,7 +7,7 @@
     buttonColor: "#E53935",
     buttonText: "PRESS ME",
     buttonSize: 320,
-    borderRadius: 16,
+    borderRadius: 200,
     depth: 6,
     soundEnabled: false,
     hapticsEnabled: true,
@@ -203,13 +203,14 @@
 
   function renderTheme() {
     var resolvedTheme = getResolvedTheme();
-    var themeLabel = state.theme.charAt(0).toUpperCase() + state.theme.slice(1);
+    var preferenceLabel = state.theme.charAt(0).toUpperCase() + state.theme.slice(1);
+    var resolvedLabel = resolvedTheme.charAt(0).toUpperCase() + resolvedTheme.slice(1);
 
     document.documentElement.dataset.theme = resolvedTheme;
     document.documentElement.style.colorScheme = resolvedTheme;
-    themeName.textContent = themeLabel;
-    themeToggle.setAttribute("aria-label", "Theme: " + themeLabel + ". Change theme");
-    themeToggle.title = "Theme: " + themeLabel + ". Click to change";
+    themeName.textContent = resolvedLabel.toUpperCase();
+    themeToggle.setAttribute("aria-label", "Theme: " + preferenceLabel + ". Currently " + resolvedLabel + ". Change theme");
+    themeToggle.title = "Theme: " + resolvedLabel + " (" + preferenceLabel + "). Click to change";
     themeIcon.setAttribute("data-mode", state.theme);
     themeColorMeta.setAttribute("content", resolvedTheme === "dark" ? "#0B0B0A" : "#F2F1ED");
   }
@@ -228,6 +229,7 @@
     var deepShadow = mixColor(color, { r: 0, g: 0, b: 0 }, 0.38);
     var ink = getContrastingInk(color);
 
+    document.documentElement.style.setProperty("--brand-accent", state.buttonColor);
     pressButton.style.setProperty("--button-size", state.buttonSize + "px");
     pressButton.style.setProperty("--button-radius", state.borderRadius + "px");
     pressButton.style.setProperty("--button-depth", state.depth + "px");

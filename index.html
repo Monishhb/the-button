@@ -10,6 +10,16 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="brand-lockup">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="4"></circle>
+      </svg>
+      <div class="brand-copy">
+        <span class="brand-name">The Button</span>
+        <span class="brand-tagline">Press. See. Repeat.</span>
+      </div>
+    </div>
+
     <header class="toolbar" aria-label="Site controls">
       <div class="toolbar-inner">
         <button class="tool-button" id="theme-toggle" type="button" aria-label="Theme: System. Change theme" title="Change theme">
@@ -45,16 +55,31 @@
     </header>
 
     <main class="stage">
-      <div class="button-area">
-        <div class="button-housing">
-          <button class="press-button" id="press-button" type="button" aria-label="Press the button" aria-pressed="false">
-            <span id="button-label">PRESS ME</span>
-          </button>
+      <div class="experience">
+        <section class="hero-intro" aria-labelledby="hero-title">
+          <h1 class="hero-title" id="hero-title">
+            <span>One Button.</span>
+            <span class="hero-accent">Endless Curiosity.</span>
+          </h1>
+          <p class="hero-support">A tiny experiment in interaction. Press the button and see what happens.</p>
+        </section>
+
+        <div class="button-area">
+          <div class="button-housing">
+            <button class="press-button" id="press-button" type="button" aria-label="Press the button" aria-pressed="false">
+              <span id="button-label">PRESS ME</span>
+            </button>
+          </div>
+          <div class="counter">
+            <output class="counter-number" id="press-count" aria-live="polite" aria-atomic="true">0</output>
+            <span class="counter-label">PRESSES</span>
+          </div>
         </div>
-        <div class="counter">
-          <output class="counter-number" id="press-count" aria-live="polite" aria-atomic="true">0</output>
-          <span class="counter-label">PRESSES</span>
-        </div>
+
+        <footer class="site-footer">
+          <div class="footer-rule" aria-hidden="true"><span></span></div>
+          <p>Made with curiosity &amp; code <span class="footer-heart" aria-hidden="true">&#9829;</span></p>
+        </footer>
       </div>
     </main>
 
@@ -114,9 +139,9 @@
           <div class="control-group">
             <div class="control-label-row">
               <label for="radius-slider">Border radius</label>
-              <output id="radius-value">16px</output>
+              <output id="radius-value">Pill</output>
             </div>
-            <input class="range-input" id="radius-slider" type="range" min="0" max="200" step="1" value="16">
+            <input class="range-input" id="radius-slider" type="range" min="0" max="200" step="1" value="200">
             <div class="preset-row" role="group" aria-label="Border radius presets">
               <button class="preset-button" type="button" data-radius="0">Square</button>
               <button class="preset-button" type="button" data-radius="16">Rounded</button>
