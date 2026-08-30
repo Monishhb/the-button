@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#F2F1ED" id="theme-color">
+    <meta name="description" content="A website dedicated to pressing one button.">
+    <title>The Button</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="toolbar" aria-label="Site controls">
+      <div class="toolbar-inner">
+        <button class="tool-button" id="theme-toggle" type="button" aria-label="Theme: System. Change theme" title="Change theme">
+          <svg class="tool-icon theme-icon" id="theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+          </svg>
+          <span class="tool-label" id="theme-name">System</span>
+        </button>
+        <button class="tool-button" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false">
+          <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6"></path>
+            <circle cx="17" cy="7" r="3"></circle>
+            <circle cx="7" cy="17" r="3"></circle>
+          </svg>
+          <span class="tool-label">Customize</span>
+        </button>
+        <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false">
+          <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M5.64 18.36l2.83-2.83M15.53 8.47l2.83-2.83"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+          <span class="tool-label">Settings</span>
+        </button>
+        <button class="tool-button" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false">
+          <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 10v6M12 7.5h.01"></path>
+          </svg>
+          <span class="tool-label">About</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div class="button-area">
+        <div class="button-housing">
+          <button class="press-button" id="press-button" type="button" aria-label="Press the button" aria-pressed="false">
+            <span id="button-label">PRESS ME</span>
+          </button>
+        </div>
+        <div class="counter">
+          <output class="counter-number" id="press-count" aria-live="polite" aria-atomic="true">0</output>
+          <span class="counter-label">PRESSES</span>
+        </div>
+      </div>
+    </main>
+
+    <div class="panel-overlay" id="panel-overlay" hidden></div>
+
+    <aside class="panel" id="customize-panel" role="dialog" aria-modal="true" aria-labelledby="customize-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Make it yours</p>
+          <h2 id="customize-title">Customize</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close customize panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="panel-content">
+        <section class="control-section" aria-labelledby="appearance-title">
+          <h3 id="appearance-title">Appearance</h3>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="color-picker">Color</label>
+              <output id="color-value">#E53935</output>
+            </div>
+            <div class="color-picker-row">
+              <input id="color-picker" type="color" value="#E53935" aria-label="Choose button color">
+              <div class="swatches" role="group" aria-label="Color presets">
+                <button class="swatch" type="button" data-color="#E53935" style="--swatch-color: #E53935" aria-label="Red" title="Red"></button>
+                <button class="swatch" type="button" data-color="#2563EB" style="--swatch-color: #2563EB" aria-label="Blue" title="Blue"></button>
+                <button class="swatch" type="button" data-color="#7C3AED" style="--swatch-color: #7C3AED" aria-label="Purple" title="Purple"></button>
+                <button class="swatch" type="button" data-color="#16A34A" style="--swatch-color: #16A34A" aria-label="Green" title="Green"></button>
+                <button class="swatch" type="button" data-color="#F97316" style="--swatch-color: #F97316" aria-label="Orange" title="Orange"></button>
+                <button class="swatch" type="button" data-color="#111111" style="--swatch-color: #111111" aria-label="Black" title="Black"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="label-input">Label text</label>
+              <span class="control-hint">20 characters max</span>
+            </div>
+            <input class="text-input" id="label-input" type="text" maxlength="20" placeholder="PRESS ME" autocomplete="off">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="size-slider">Size</label>
+              <output id="size-value">320px</output>
+            </div>
+            <input class="range-input" id="size-slider" type="range" min="150" max="400" step="1" value="320">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="radius-slider">Border radius</label>
+              <output id="radius-value">16px</output>
+            </div>
+            <input class="range-input" id="radius-slider" type="range" min="0" max="200" step="1" value="16">
+            <div class="preset-row" role="group" aria-label="Border radius presets">
+              <button class="preset-button" type="button" data-radius="0">Square</button>
+              <button class="preset-button" type="button" data-radius="16">Rounded</button>
+              <button class="preset-button" type="button" data-radius="64">Very rounded</button>
+              <button class="preset-button" type="button" data-radius="200">Pill</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="depth-slider">Depth</label>
+              <output id="depth-value">6px</output>
+            </div>
+            <input class="range-input" id="depth-slider" type="range" min="2" max="16" step="1" value="6">
+          </div>
+        </section>
+
+        <div class="share-row">
+          <button class="text-button share-button" id="copy-link" type="button">Copy share link</button>
+          <p class="share-hint">The URL updates as you customize.</p>
+        </div>
+
+        <button class="text-button" id="reset-appearance" type="button">Reset to default</button>
+      </div>
+    </aside>
+
+    <aside class="panel" id="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Small details</p>
+          <h2 id="settings-title">Settings</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close settings panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="panel-content">
+        <section class="control-section" aria-labelledby="feedback-title">
+          <h3 id="feedback-title">Feedback</h3>
+
+          <div class="setting-row" id="sound-setting">
+            <div>
+              <label for="sound-toggle">Mechanical sound</label>
+              <p>Short and subtle on press.</p>
+            </div>
+            <label class="switch">
+              <input id="sound-toggle" type="checkbox">
+              <span class="switch-track" aria-hidden="true"></span>
+              <span class="sr-only">Toggle mechanical sound</span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="haptics-setting">
+            <div>
+              <label for="haptics-toggle">Haptic feedback</label>
+              <p>A tiny vibration when supported.</p>
+            </div>
+            <label class="switch">
+              <input id="haptics-toggle" type="checkbox">
+              <span class="switch-track" aria-hidden="true"></span>
+              <span class="sr-only">Toggle haptic feedback</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="control-section" aria-labelledby="motion-title">
+          <h3 id="motion-title">Animation</h3>
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="animation-setting">Motion</label>
+              <span class="control-hint">OS reduced motion always wins</span>
+            </div>
+            <select class="select-input" id="animation-setting">
+              <option value="full">Full</option>
+              <option value="reduced">Reduced</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="control-section reset-section" aria-labelledby="reset-title">
+          <h3 id="reset-title">Reset</h3>
+          <p class="section-copy">Clear the counter and restore every preference to its default.</p>
+          <button class="reset-button" id="reset-everything" type="button">Reset everything</button>
+        </section>
+      </div>
+    </aside>
+
+    <aside class="panel about-panel" id="about-panel" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">The simple version</p>
+          <h2 id="about-title">The Button</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close about panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="panel-content about-content">
+        <p>A website dedicated to pressing one button.</p>
+        <p>Built by Moni</p>
+        <a class="github-link" href="https://github.com/YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+          GitHub <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+    </aside>
+  </body>
+</html>
