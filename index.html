@@ -4,32 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#F2F1ED" id="theme-color">
-    <meta name="description" content="A website dedicated to pressing one button.">
-    <title>The Button</title>
+    <meta name="description" content="A beautifully crafted interactive button. Press. See. Repeat.">
+    <title>The Button — Press. See. Repeat.</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0a'/%3E%3Crect x='5' y='5' width='22' height='22' rx='7' fill='none' stroke='%23ffffff' stroke-opacity='.35' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23E53935'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="brand-lockup">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="4"></circle>
-      </svg>
-      <div class="brand-copy">
-        <span class="brand-name">The Button</span>
-        <span class="brand-tagline">Press. See. Repeat.</span>
-      </div>
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop-layer backdrop-glow"></div>
+      <div class="backdrop-layer backdrop-aurora-a"></div>
+      <div class="backdrop-layer backdrop-aurora-b"></div>
     </div>
 
-    <header class="toolbar" aria-label="Site controls">
-      <div class="toolbar-inner">
-        <button class="tool-button" id="theme-toggle" type="button" aria-label="Theme: System. Change theme" title="Change theme">
-          <svg class="tool-icon theme-icon" id="theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect class="brand-bezel" x="3" y="3" width="26" height="26" rx="8.5"></rect>
+          <circle class="brand-ring" cx="16" cy="16" r="10.5"></circle>
+          <circle class="brand-cap" cx="16" cy="16" r="6"></circle>
+        </svg>
+        <div class="brand-copy">
+          <span class="brand-name">The Button</span>
+          <span class="brand-tagline">Press. See. Repeat.</span>
+        </div>
+      </div>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <button class="tool-button js-theme-toggle" type="button" data-theme-toggle aria-label="Change theme" title="Change theme">
+          <svg class="tool-icon theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
           </svg>
-          <span class="tool-label" id="theme-name">System</span>
+          <span class="tool-label theme-name">System</span>
         </button>
-        <button class="tool-button" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false">
+        <button class="tool-button" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false" aria-label="Customize">
           <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
             <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6"></path>
             <circle cx="17" cy="7" r="3"></circle>
@@ -37,22 +46,75 @@
           </svg>
           <span class="tool-label">Customize</span>
         </button>
-        <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false">
+        <button class="tool-button" type="button" data-panel="stats-panel" aria-controls="stats-panel" aria-expanded="false" aria-label="Stats">
+          <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M4 20V11M10 20V4M16 20v-6M20 20H4"></path>
+          </svg>
+          <span class="tool-label">Stats</span>
+        </button>
+        <button class="tool-button" type="button" data-panel="modes-panel" aria-controls="modes-panel" aria-expanded="false" aria-label="Modes">
+          <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <rect x="4" y="4" width="7" height="7" rx="1.5"></rect>
+            <rect x="13" y="4" width="7" height="7" rx="1.5"></rect>
+            <rect x="4" y="13" width="7" height="7" rx="1.5"></rect>
+            <rect x="13" y="13" width="7" height="7" rx="1.5"></rect>
+          </svg>
+          <span class="tool-label">Modes</span>
+        </button>
+        <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false" aria-label="Settings">
           <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
             <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M5.64 18.36l2.83-2.83M15.53 8.47l2.83-2.83"></path>
             <circle cx="12" cy="12" r="4"></circle>
           </svg>
           <span class="tool-label">Settings</span>
         </button>
-        <button class="tool-button" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false">
+        <button class="tool-button" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false" aria-label="About">
           <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
             <circle cx="12" cy="12" r="9"></circle>
             <path d="M12 10v6M12 7.5h.01"></path>
           </svg>
           <span class="tool-label">About</span>
         </button>
-      </div>
+      </nav>
     </header>
+
+    <nav class="bottom-nav" aria-label="Primary">
+      <button class="tool-button js-theme-toggle" type="button" data-theme-toggle aria-label="Change theme" title="Change theme">
+        <svg class="tool-icon theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+        <span class="tool-label theme-name">System</span>
+      </button>
+      <button class="tool-button" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false" aria-label="Customize">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6"></path>
+          <circle cx="17" cy="7" r="3"></circle>
+          <circle cx="7" cy="17" r="3"></circle>
+        </svg>
+        <span class="tool-label">Customize</span>
+      </button>
+      <button class="tool-button" type="button" data-panel="stats-panel" aria-controls="stats-panel" aria-expanded="false" aria-label="Stats">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 20V11M10 20V4M16 20v-6M20 20H4"></path>
+        </svg>
+        <span class="tool-label">Stats</span>
+      </button>
+      <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false" aria-label="Settings">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M5.64 18.36l2.83-2.83M15.53 8.47l2.83-2.83"></path>
+          <circle cx="12" cy="12" r="4"></circle>
+        </svg>
+        <span class="tool-label">Settings</span>
+      </button>
+      <button class="tool-button" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false" aria-label="About">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 10v6M12 7.5h.01"></path>
+        </svg>
+        <span class="tool-label">About</span>
+      </button>
+    </nav>
 
     <main class="stage">
       <div class="experience">
@@ -69,11 +131,24 @@
             <button class="press-button" id="press-button" type="button" aria-label="Press the button" aria-pressed="false">
               <span id="button-label">PRESS ME</span>
             </button>
+            <div class="button-fx button-fx-in" aria-hidden="true"></div>
+            <div class="button-fx button-fx-out" aria-hidden="true"></div>
           </div>
+
           <div class="counter">
             <output class="counter-number" id="press-count" aria-live="polite" aria-atomic="true">0</output>
             <span class="counter-label">PRESSES</span>
           </div>
+
+          <div class="mode-line">
+            <button class="mode-chip" type="button" data-panel="modes-panel" aria-controls="modes-panel" aria-expanded="false" aria-label="Mode. Open modes panel">
+              <span class="mode-chip-dot" aria-hidden="true"></span>
+              <span class="mode-chip-label" id="mode-chip-label">Classic</span>
+            </button>
+            <p class="mode-status" id="mode-status" aria-live="polite"></p>
+          </div>
+
+          <p class="key-hint" aria-hidden="true">Press <kbd>Space</kbd> to press</p>
         </div>
 
         <footer class="site-footer">
@@ -84,6 +159,7 @@
     </main>
 
     <div class="panel-overlay" id="panel-overlay" hidden></div>
+    <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="false"></div>
 
     <aside class="panel" id="customize-panel" role="dialog" aria-modal="true" aria-labelledby="customize-title" aria-hidden="true" hidden>
       <div class="panel-header">
@@ -115,6 +191,7 @@
                 <button class="swatch" type="button" data-color="#7C3AED" style="--swatch-color: #7C3AED" aria-label="Purple" title="Purple"></button>
                 <button class="swatch" type="button" data-color="#16A34A" style="--swatch-color: #16A34A" aria-label="Green" title="Green"></button>
                 <button class="swatch" type="button" data-color="#F97316" style="--swatch-color: #F97316" aria-label="Orange" title="Orange"></button>
+                <button class="swatch" type="button" data-color="#22D3EE" style="--swatch-color: #22D3EE" aria-label="Cyan" title="Cyan"></button>
                 <button class="swatch" type="button" data-color="#111111" style="--swatch-color: #111111" aria-label="Black" title="Black"></button>
               </div>
             </div>
@@ -159,12 +236,204 @@
           </div>
         </section>
 
+        <section class="control-section" aria-labelledby="presets-title">
+          <h3 id="presets-title">Presets</h3>
+          <div class="preset-grid" role="group" aria-label="Button presets">
+            <button class="preset-chip" type="button" data-preset="classic">Classic</button>
+            <button class="preset-chip" type="button" data-preset="arcade">Arcade</button>
+            <button class="preset-chip" type="button" data-preset="emergency">Emergency</button>
+            <button class="preset-chip" type="button" data-preset="bubble">Bubble</button>
+            <button class="preset-chip" type="button" data-preset="minimal">Minimal</button>
+            <button class="preset-chip" type="button" data-preset="neon">Neon</button>
+          </div>
+        </section>
+
         <div class="share-row">
-          <button class="text-button share-button" id="copy-link" type="button">Copy share link</button>
-          <p class="share-hint">The URL updates as you customize.</p>
+          <button class="text-button share-button" id="copy-link" type="button">Copy link</button>
+          <p class="share-hint">The URL updates as you customize. Anyone who opens it gets your button.</p>
         </div>
 
-        <button class="text-button" id="reset-appearance" type="button">Reset to default</button>
+        <button class="text-button" id="reset-appearance" type="button">Reset appearance</button>
+      </div>
+    </aside>
+
+    <aside class="panel" id="stats-panel" role="dialog" aria-modal="true" aria-labelledby="stats-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">On this device</p>
+          <h2 id="stats-title">Stats</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close stats panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="panel-content">
+        <section class="control-section" aria-labelledby="stats-overview-title">
+          <h3 id="stats-overview-title">Your numbers</h3>
+          <dl class="stats-grid">
+            <div class="stat">
+              <dt>Total presses</dt>
+              <dd id="stat-total">0</dd>
+            </div>
+            <div class="stat">
+              <dt>Today</dt>
+              <dd id="stat-today">0</dd>
+            </div>
+            <div class="stat">
+              <dt>Current session</dt>
+              <dd id="stat-session">0</dd>
+            </div>
+            <div class="stat">
+              <dt>Best streak</dt>
+              <dd id="stat-streak">0</dd>
+            </div>
+            <div class="stat stat-wide">
+              <dt>Fastest 10 presses</dt>
+              <dd id="stat-fastest">—</dd>
+            </div>
+          </dl>
+          <p class="section-copy stats-note">Stored locally in this browser. Nothing leaves your device.</p>
+        </section>
+
+        <button class="text-button" type="button" data-panel="achievements-panel" aria-controls="achievements-panel" aria-expanded="false">View achievements</button>
+      </div>
+    </aside>
+
+    <aside class="panel" id="achievements-panel" role="dialog" aria-modal="true" aria-labelledby="achievements-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Milestones</p>
+          <h2 id="achievements-title">Achievements</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close achievements panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="panel-content">
+        <ul class="achievement-list">
+          <li class="achievement" data-achievement="first_press">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>First Press</h3>
+              <p>Press the button for the very first time.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="presses_100">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>100 Presses</h3>
+              <p>Press the button 100 times.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="presses_1000">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>1,000 Presses</h3>
+              <p>Press the button 1,000 times.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="presses_10000">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>10,000 Presses</h3>
+              <p>Press the button 10,000 times.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="presses_100000">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>100,000 Presses</h3>
+              <p>Press the button 100,000 times.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="button_addict">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>Button Addict</h3>
+              <p>Press 1,000 times in a single day.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="rapid_fire">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>Rapid Fire</h3>
+              <p>Finish a Rapid challenge under 3 seconds.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="night_owl">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>Night Owl</h3>
+              <p>Press between midnight and 4 AM.</p>
+            </div>
+          </li>
+          <li class="achievement" data-achievement="curious">
+            <span class="achievement-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5l2.5 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.2 2.7 1.1-5.8L3.6 9.7l5.9-.8z"></path></svg>
+            </span>
+            <div class="achievement-copy">
+              <h3>Curious</h3>
+              <p>Open every panel.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <aside class="panel" id="modes-panel" role="dialog" aria-modal="true" aria-labelledby="modes-title" aria-hidden="true" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">How to play</p>
+          <h2 id="modes-title">Modes</h2>
+        </div>
+        <button class="panel-close" type="button" data-close-panel aria-label="Close modes panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M5 5l14 14M19 5L5 19"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="panel-content">
+        <section class="control-section" aria-labelledby="mode-choice-title">
+          <h3 id="mode-choice-title">Choose a mode</h3>
+          <div class="mode-list" role="group" aria-label="Button modes">
+            <button class="mode-card" type="button" data-mode="classic" aria-pressed="true">
+              <span class="mode-card-name">Classic</span>
+              <span class="mode-card-desc">Normal button behavior.</span>
+            </button>
+            <button class="mode-card" type="button" data-mode="rapid" aria-pressed="false">
+              <span class="mode-card-name">Rapid</span>
+              <span class="mode-card-desc">Press 10 times as quickly as you can.</span>
+            </button>
+            <button class="mode-card" type="button" data-mode="zen" aria-pressed="false">
+              <span class="mode-card-name">Zen</span>
+              <span class="mode-card-desc">Slower, softer, and calmer.</span>
+            </button>
+            <button class="mode-card" type="button" data-mode="chaos" aria-pressed="false">
+              <span class="mode-card-name">Chaos</span>
+              <span class="mode-card-desc">Occasional surprises. Never annoying.</span>
+            </button>
+          </div>
+        </section>
       </div>
     </aside>
 
@@ -185,16 +454,32 @@
         <section class="control-section" aria-labelledby="feedback-title">
           <h3 id="feedback-title">Feedback</h3>
 
-          <div class="setting-row" id="sound-setting">
-            <div>
-              <label for="sound-toggle">Mechanical sound</label>
-              <p>Short and subtle on press.</p>
+          <div class="control-group" id="sound-setting">
+            <div class="control-label-row">
+              <label for="sound-select">Sound</label>
+              <span class="control-hint">Web Audio</span>
             </div>
-            <label class="switch">
-              <input id="sound-toggle" type="checkbox">
-              <span class="switch-track" aria-hidden="true"></span>
-              <span class="sr-only">Toggle mechanical sound</span>
-            </label>
+            <select class="select-input" id="sound-select">
+              <option value="mechanical">Mechanical</option>
+              <option value="soft">Soft</option>
+              <option value="arcade">Arcade</option>
+              <option value="click">Click</option>
+              <option value="muted">Muted</option>
+            </select>
+          </div>
+
+          <div class="control-group" id="effect-setting">
+            <div class="control-label-row">
+              <label for="effect-select">Press effect</label>
+              <span class="control-hint">Plays on release</span>
+            </div>
+            <select class="select-input" id="effect-select">
+              <option value="none">None</option>
+              <option value="ripple">Ripple</option>
+              <option value="glow">Glow</option>
+              <option value="particles">Particles</option>
+              <option value="shockwave">Shockwave</option>
+            </select>
           </div>
 
           <div class="setting-row" id="haptics-setting">
@@ -210,8 +495,22 @@
           </div>
         </section>
 
-        <section class="control-section" aria-labelledby="motion-title">
-          <h3 id="motion-title">Animation</h3>
+        <section class="control-section" aria-labelledby="environment-title">
+          <h3 id="environment-title">Environment</h3>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <label for="background-select">Background</label>
+            </div>
+            <select class="select-input" id="background-select">
+              <option value="solid">Solid</option>
+              <option value="gradient">Gradient</option>
+              <option value="glow">Glow</option>
+              <option value="aurora">Aurora</option>
+              <option value="minimal">Minimal</option>
+            </select>
+          </div>
+
           <div class="control-group">
             <div class="control-label-row">
               <label for="animation-setting">Motion</label>
@@ -228,6 +527,21 @@
           <h3 id="reset-title">Reset</h3>
           <p class="section-copy">Clear the counter and restore every preference to its default.</p>
           <button class="reset-button" id="reset-everything" type="button">Reset everything</button>
+
+          <div class="reset-confirm" id="reset-confirm" hidden>
+            <p class="reset-confirm-title">This permanently removes:</p>
+            <ul class="reset-confirm-list">
+              <li>Press count</li>
+              <li>Statistics</li>
+              <li>Achievements</li>
+              <li>Button customization</li>
+              <li>Preferences (theme, sound, motion, mode)</li>
+            </ul>
+            <div class="reset-confirm-actions">
+              <button class="text-button" id="reset-cancel" type="button">Cancel</button>
+              <button class="reset-button" id="reset-confirm-btn" type="button">Yes, reset everything</button>
+            </div>
+          </div>
         </section>
       </div>
     </aside>
@@ -246,6 +560,7 @@
       </div>
       <div class="panel-content about-content">
         <p>A website dedicated to pressing one button.</p>
+        <p class="about-tagline">Press. See. Repeat.</p>
         <p>Built by Moni</p>
         <a class="github-link" href="https://github.com/Monishhb" target="_blank" rel="noopener noreferrer">
           GitHub <span aria-hidden="true">&#8599;</span>
