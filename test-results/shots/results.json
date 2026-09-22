@@ -1,0 +1,743 @@
+[
+  {
+    "viewport": "390x844",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "opened": true,
+      "panelOpen": true,
+      "panelClosed": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 12,
+        "y": 10,
+        "w": 366,
+        "h": 68,
+        "bottom": 78,
+        "right": 378,
+        "visible": true
+      },
+      "nav": {
+        "x": 10,
+        "y": 766,
+        "w": 370,
+        "h": 68,
+        "bottom": 834,
+        "right": 380,
+        "visible": true
+      },
+      "button": {
+        "x": 35,
+        "y": 219,
+        "w": 320,
+        "h": 320,
+        "bottom": 539,
+        "right": 355,
+        "visible": true
+      },
+      "counter": {
+        "x": 160,
+        "y": 572,
+        "w": 70,
+        "h": 44,
+        "bottom": 617,
+        "right": 230,
+        "visible": true
+      },
+      "hero": {
+        "x": 16,
+        "y": 88,
+        "w": 358,
+        "h": 60,
+        "bottom": 148,
+        "right": 374,
+        "visible": true
+      },
+      "mode": {
+        "x": 137,
+        "y": 635,
+        "w": 116,
+        "h": 40,
+        "bottom": 675,
+        "right": 253,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 121,
+        "y": 710,
+        "w": 147,
+        "h": 36,
+        "bottom": 746,
+        "right": 269,
+        "visible": true
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 854,
+        "bottom": 854,
+        "right": 390,
+        "visible": true
+      },
+      "navVisible": true,
+      "headerActionsVisible": true,
+      "navDesktopVisible": false,
+      "footerVisible": false
+    },
+    "overlaps": {
+      "navCoversButton": false,
+      "navCoversCounter": false,
+      "navCoversMode": false,
+      "keyOverlapsNav": false,
+      "headerHero": false,
+      "buttonAboveNav": true,
+      "contentInStage": true,
+      "buttonCenterDelta": 0
+    }
+  },
+  {
+    "viewport": "393x852",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "opened": true,
+      "panelOpen": true,
+      "panelClosed": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 393,
+      "clientWidth": 393,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 12,
+        "y": 10,
+        "w": 369,
+        "h": 68,
+        "bottom": 78,
+        "right": 381,
+        "visible": true
+      },
+      "nav": {
+        "x": 10,
+        "y": 774,
+        "w": 373,
+        "h": 68,
+        "bottom": 842,
+        "right": 383,
+        "visible": true
+      },
+      "button": {
+        "x": 37,
+        "y": 219,
+        "w": 320,
+        "h": 320,
+        "bottom": 539,
+        "right": 357,
+        "visible": true
+      },
+      "counter": {
+        "x": 161,
+        "y": 573,
+        "w": 70,
+        "h": 44,
+        "bottom": 618,
+        "right": 232,
+        "visible": true
+      },
+      "hero": {
+        "x": 16,
+        "y": 88,
+        "w": 361,
+        "h": 60,
+        "bottom": 148,
+        "right": 377,
+        "visible": true
+      },
+      "mode": {
+        "x": 138,
+        "y": 636,
+        "w": 116,
+        "h": 40,
+        "bottom": 676,
+        "right": 255,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 123,
+        "y": 711,
+        "w": 147,
+        "h": 36,
+        "bottom": 747,
+        "right": 270,
+        "visible": true
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 393,
+        "h": 855,
+        "bottom": 855,
+        "right": 393,
+        "visible": true
+      },
+      "navVisible": true,
+      "headerActionsVisible": true,
+      "navDesktopVisible": false,
+      "footerVisible": false
+    },
+    "overlaps": {
+      "navCoversButton": false,
+      "navCoversCounter": false,
+      "navCoversMode": false,
+      "keyOverlapsNav": false,
+      "headerHero": false,
+      "buttonAboveNav": true,
+      "contentInStage": true,
+      "buttonCenterDelta": 0
+    }
+  },
+  {
+    "viewport": "402x874",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "opened": true,
+      "panelOpen": true,
+      "panelClosed": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 402,
+      "clientWidth": 402,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 12,
+        "y": 10,
+        "w": 378,
+        "h": 68,
+        "bottom": 78,
+        "right": 390,
+        "visible": true
+      },
+      "nav": {
+        "x": 10,
+        "y": 796,
+        "w": 382,
+        "h": 68,
+        "bottom": 864,
+        "right": 392,
+        "visible": true
+      },
+      "button": {
+        "x": 41,
+        "y": 229,
+        "w": 320,
+        "h": 320,
+        "bottom": 549,
+        "right": 361,
+        "visible": true
+      },
+      "counter": {
+        "x": 166,
+        "y": 584,
+        "w": 70,
+        "h": 44,
+        "bottom": 629,
+        "right": 236,
+        "visible": true
+      },
+      "hero": {
+        "x": 16,
+        "y": 96,
+        "w": 370,
+        "h": 62,
+        "bottom": 158,
+        "right": 386,
+        "visible": true
+      },
+      "mode": {
+        "x": 143,
+        "y": 647,
+        "w": 116,
+        "h": 40,
+        "bottom": 687,
+        "right": 259,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 127,
+        "y": 722,
+        "w": 147,
+        "h": 36,
+        "bottom": 758,
+        "right": 275,
+        "visible": true
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 402,
+        "h": 874,
+        "bottom": 874,
+        "right": 402,
+        "visible": true
+      },
+      "navVisible": true,
+      "headerActionsVisible": true,
+      "navDesktopVisible": false,
+      "footerVisible": false
+    },
+    "overlaps": {
+      "navCoversButton": false,
+      "navCoversCounter": false,
+      "navCoversMode": false,
+      "keyOverlapsNav": false,
+      "headerHero": false,
+      "buttonAboveNav": true,
+      "contentInStage": true,
+      "buttonCenterDelta": 0
+    }
+  },
+  {
+    "viewport": "430x932",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "opened": true,
+      "panelOpen": true,
+      "panelClosed": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 430,
+      "clientWidth": 430,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 12,
+        "y": 10,
+        "w": 406,
+        "h": 68,
+        "bottom": 78,
+        "right": 418,
+        "visible": true
+      },
+      "nav": {
+        "x": 10,
+        "y": 854,
+        "w": 410,
+        "h": 68,
+        "bottom": 922,
+        "right": 420,
+        "visible": true
+      },
+      "button": {
+        "x": 55,
+        "y": 261,
+        "w": 320,
+        "h": 320,
+        "bottom": 581,
+        "right": 375,
+        "visible": true
+      },
+      "counter": {
+        "x": 180,
+        "y": 617,
+        "w": 70,
+        "h": 44,
+        "bottom": 662,
+        "right": 250,
+        "visible": true
+      },
+      "hero": {
+        "x": 16,
+        "y": 121,
+        "w": 398,
+        "h": 66,
+        "bottom": 187,
+        "right": 414,
+        "visible": true
+      },
+      "mode": {
+        "x": 157,
+        "y": 680,
+        "w": 116,
+        "h": 40,
+        "bottom": 720,
+        "right": 273,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 141,
+        "y": 755,
+        "w": 147,
+        "h": 36,
+        "bottom": 791,
+        "right": 289,
+        "visible": true
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 430,
+        "h": 932,
+        "bottom": 932,
+        "right": 430,
+        "visible": true
+      },
+      "navVisible": true,
+      "headerActionsVisible": true,
+      "navDesktopVisible": false,
+      "footerVisible": false
+    },
+    "overlaps": {
+      "navCoversButton": false,
+      "navCoversCounter": false,
+      "navCoversMode": false,
+      "keyOverlapsNav": false,
+      "headerHero": false,
+      "buttonAboveNav": true,
+      "contentInStage": true,
+      "buttonCenterDelta": 0
+    }
+  },
+  {
+    "viewport": "375x667",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "opened": true,
+      "panelOpen": true,
+      "panelClosed": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 12,
+        "y": 10,
+        "w": 351,
+        "h": 62,
+        "bottom": 72,
+        "right": 363,
+        "visible": true
+      },
+      "nav": {
+        "x": 10,
+        "y": 593,
+        "w": 355,
+        "h": 64,
+        "bottom": 657,
+        "right": 365,
+        "visible": true
+      },
+      "button": {
+        "x": 73,
+        "y": 188,
+        "w": 230,
+        "h": 230,
+        "bottom": 418,
+        "right": 303,
+        "visible": true
+      },
+      "counter": {
+        "x": 152,
+        "y": 446,
+        "w": 70,
+        "h": 42,
+        "bottom": 488,
+        "right": 223,
+        "visible": true
+      },
+      "hero": {
+        "x": 16,
+        "y": 90,
+        "w": 343,
+        "h": 48,
+        "bottom": 137,
+        "right": 359,
+        "visible": true
+      },
+      "mode": {
+        "x": 129,
+        "y": 502,
+        "w": 116,
+        "h": 40,
+        "bottom": 542,
+        "right": 246,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0,
+        "visible": false
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 667,
+        "bottom": 667,
+        "right": 375,
+        "visible": true
+      },
+      "navVisible": true,
+      "headerActionsVisible": true,
+      "navDesktopVisible": false,
+      "footerVisible": false
+    },
+    "overlaps": {
+      "navCoversButton": false,
+      "navCoversCounter": false,
+      "navCoversMode": false,
+      "keyOverlapsNav": false,
+      "headerHero": false,
+      "buttonAboveNav": true,
+      "contentInStage": true,
+      "buttonCenterDelta": 0
+    }
+  },
+  {
+    "viewport": "desktop",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "panelOpen": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 32,
+        "y": 18,
+        "w": 1216,
+        "h": 84,
+        "bottom": 102,
+        "right": 1248,
+        "visible": true
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0,
+        "visible": false
+      },
+      "button": {
+        "x": 480,
+        "y": 268,
+        "w": 320,
+        "h": 320,
+        "bottom": 588,
+        "right": 800,
+        "visible": true
+      },
+      "counter": {
+        "x": 605,
+        "y": 620,
+        "w": 70,
+        "h": 51,
+        "bottom": 671,
+        "right": 675,
+        "visible": true
+      },
+      "hero": {
+        "x": 190,
+        "y": 108,
+        "w": 900,
+        "h": 87,
+        "bottom": 195,
+        "right": 1090,
+        "visible": true
+      },
+      "mode": {
+        "x": 582,
+        "y": 689,
+        "w": 116,
+        "h": 40,
+        "bottom": 729,
+        "right": 698,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 566,
+        "y": 764,
+        "w": 147,
+        "h": 36,
+        "bottom": 800,
+        "right": 714,
+        "visible": true
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 927,
+        "bottom": 927,
+        "right": 1280,
+        "visible": true
+      },
+      "navVisible": false,
+      "headerActionsVisible": false,
+      "navDesktopVisible": true,
+      "footerVisible": true
+    },
+    "overlaps": {}
+  },
+  {
+    "viewport": "landscape",
+    "errors": [],
+    "press": {
+      "before": "0",
+      "after": "1"
+    },
+    "menuOk": {
+      "panelOpen": true
+    },
+    "themeAfter": "light",
+    "metrics": {
+      "horizontalScroll": false,
+      "scrollWidth": 844,
+      "clientWidth": 844,
+      "theme": "dark",
+      "pressCount": "0",
+      "buttonLabel": "GLOW",
+      "modeLabel": "Classic",
+      "header": {
+        "x": 20,
+        "y": 14,
+        "w": 804,
+        "h": 64,
+        "bottom": 78,
+        "right": 824,
+        "visible": true
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0,
+        "visible": false
+      },
+      "button": {
+        "x": 342,
+        "y": 150,
+        "w": 160,
+        "h": 160,
+        "bottom": 310,
+        "right": 502,
+        "visible": true
+      },
+      "counter": {
+        "x": 387,
+        "y": 318,
+        "w": 70,
+        "h": 51,
+        "bottom": 369,
+        "right": 457,
+        "visible": true
+      },
+      "hero": {
+        "x": 24,
+        "y": 96,
+        "w": 796,
+        "h": 42,
+        "bottom": 138,
+        "right": 820,
+        "visible": true
+      },
+      "mode": {
+        "x": 364,
+        "y": 377,
+        "w": 116,
+        "h": 40,
+        "bottom": 417,
+        "right": 480,
+        "visible": true
+      },
+      "keyHint": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0,
+        "visible": false
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 844,
+        "h": 456,
+        "bottom": 456,
+        "right": 844,
+        "visible": true
+      },
+      "navVisible": false,
+      "headerActionsVisible": false,
+      "navDesktopVisible": true,
+      "footerVisible": false
+    },
+    "overlaps": {}
+  }
+]

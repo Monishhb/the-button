@@ -4,17 +4,17 @@
   var defaults = {
     pressCount: 0,
     theme: "system",
-    buttonColor: "#E53935",
-    buttonText: "PRESS ME",
+    buttonColor: "#22D3EE",
+    buttonText: "GLOW",
     buttonSize: 320,
     borderRadius: 200,
-    depth: 6,
+    depth: 10,
     sound: "muted",
     hapticsEnabled: true,
     animationsReduced: false,
     effect: "ripple",
     background: "gradient",
-    preset: "classic",
+    preset: "neon",
     mode: "classic"
   };
 
@@ -149,6 +149,9 @@
   var resetConfirm = document.getElementById("reset-confirm");
   var resetCancelButton = document.getElementById("reset-cancel");
   var resetConfirmButton = document.getElementById("reset-confirm-btn");
+  var menuToggle = document.querySelector(".js-menu-toggle");
+  var headerMenu = document.getElementById("header-menu");
+  var homeButton = document.querySelector(".js-home");
 
   var statTotal = document.getElementById("stat-total");
   var statToday = document.getElementById("stat-today");
@@ -180,6 +183,7 @@
     bindShareEvents();
     bindKeyboardEvents();
     bindModeEvents();
+    bindMenuEvents();
 
     evaluateAchievements();
 
@@ -415,7 +419,7 @@
 
     document.documentElement.dataset.theme = resolvedTheme;
     document.documentElement.style.colorScheme = resolvedTheme;
-    themeColorMeta.setAttribute("content", resolvedTheme === "dark" ? "#08090A" : "#F2F1ED");
+    themeColorMeta.setAttribute("content", resolvedTheme === "dark" ? "#05080D" : "#F2F1ED");
 
     for (var index = 0; index < themeToggles.length; index += 1) {
       var toggle = themeToggles[index];
@@ -1122,6 +1126,10 @@
       panelOverlay.hidden = true;
       document.body.classList.remove("panel-open");
       closeTimer = null;
+      if (homeButton && !activePanel) {
+        homeButton.classList.add("is-active");
+        homeButton.setAttribute("aria-current", "page");
+      }
     }, 280);
 
     if (focusTarget && typeof focusTarget.focus === "function") {
@@ -1640,6 +1648,78 @@
     document.querySelectorAll(".mode-card[data-mode]").forEach(function (modeButton) {
       modeButton.addEventListener("click", function () {
         setMode(modeButton.getAttribute("data-mode"));
+      });
+    });
+  }
+
+  function closeHeaderMenu() {
+    if (!headerMenu || !menuToggle) {
+      return;
+    }
+    headerMenu.hidden = true;
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+  }
+
+  function openHeaderMenu() {
+    if (!headerMenu || !menuToggle) {
+      return;
+    }
+    headerMenu.hidden = false;
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close menu");
+  }
+
+  function bindMenuEvents() {
+    if (menuToggle && headerMenu) {
+      menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (headerMenu.hidden) {
+          openHeaderMenu();
+        } else {
+          closeHeaderMenu();
+        }
+      });
+
+      headerMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+
+      document.addEventListener("click", function (event) {
+        if (headerMenu.hidden) {
+          return;
+        }
+        if (!headerMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+          closeHeaderMenu();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !headerMenu.hidden && !activePanel) {
+          closeHeaderMenu();
+          menuToggle.focus();
+        }
+      });
+    }
+
+    if (homeButton) {
+      homeButton.addEventListener("click", function () {
+        closeHeaderMenu();
+        if (activePanel) {
+          closePanel();
+        }
+        homeButton.classList.add("is-active");
+        homeButton.setAttribute("aria-current", "page");
+      });
+    }
+
+    panelTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        closeHeaderMenu();
+        if (homeButton && trigger.closest(".bottom-nav") && !trigger.classList.contains("nav-home")) {
+          homeButton.classList.remove("is-active");
+          homeButton.removeAttribute("aria-current");
+        }
       });
     });
   }

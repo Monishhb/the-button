@@ -12,6 +12,8 @@
   </head>
   <body>
     <div class="backdrop" aria-hidden="true">
+      <div class="backdrop-arc backdrop-arc-top"></div>
+      <div class="backdrop-arc backdrop-arc-bottom"></div>
       <div class="backdrop-layer backdrop-glow"></div>
       <div class="backdrop-layer backdrop-aurora-a"></div>
       <div class="backdrop-layer backdrop-aurora-b"></div>
@@ -28,6 +30,20 @@
           <span class="brand-name">The Button</span>
           <span class="brand-tagline">Press. See. Repeat.</span>
         </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-button js-theme-toggle" type="button" data-theme-toggle aria-label="Change theme" title="Change theme">
+          <svg class="tool-icon theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+          </svg>
+        </button>
+        <button class="icon-button js-menu-toggle" type="button" aria-label="Open menu" aria-controls="header-menu" aria-expanded="false">
+          <svg class="tool-icon menu-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
       </div>
 
       <nav class="nav-desktop" aria-label="Primary">
@@ -63,7 +79,7 @@
         </button>
         <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false" aria-label="Settings">
           <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-            <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M5.64 18.36l2.83-2.83M15.53 8.47l2.83-2.83"></path>
+            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             <circle cx="12" cy="12" r="4"></circle>
           </svg>
           <span class="tool-label">Settings</span>
@@ -78,13 +94,53 @@
       </nav>
     </header>
 
-    <nav class="bottom-nav" aria-label="Primary">
-      <button class="tool-button js-theme-toggle" type="button" data-theme-toggle aria-label="Change theme" title="Change theme">
-        <svg class="tool-icon theme-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+    <div class="header-menu" id="header-menu" hidden>
+      <button class="header-menu-item" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6"></path>
+          <circle cx="17" cy="7" r="3"></circle>
+          <circle cx="7" cy="17" r="3"></circle>
         </svg>
-        <span class="tool-label theme-name">System</span>
+        <span>Customize</span>
+      </button>
+      <button class="header-menu-item" type="button" data-panel="stats-panel" aria-controls="stats-panel" aria-expanded="false">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 20V11M10 20V4M16 20v-6M20 20H4"></path>
+        </svg>
+        <span>Stats</span>
+      </button>
+      <button class="header-menu-item" type="button" data-panel="modes-panel" aria-controls="modes-panel" aria-expanded="false">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <rect x="4" y="4" width="7" height="7" rx="1.5"></rect>
+          <rect x="13" y="4" width="7" height="7" rx="1.5"></rect>
+          <rect x="4" y="13" width="7" height="7" rx="1.5"></rect>
+          <rect x="13" y="13" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span>Modes</span>
+      </button>
+      <button class="header-menu-item" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          <circle cx="12" cy="12" r="4"></circle>
+        </svg>
+        <span>Settings</span>
+      </button>
+      <button class="header-menu-item" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 10v6M12 7.5h.01"></path>
+        </svg>
+        <span>About</span>
+      </button>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Primary">
+      <button class="tool-button nav-home is-active js-home" type="button" aria-label="Home" aria-current="page">
+        <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+          <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-9.5z"></path>
+        </svg>
+        <span class="tool-label">Home</span>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </button>
       <button class="tool-button" type="button" data-panel="customize-panel" aria-controls="customize-panel" aria-expanded="false" aria-label="Customize">
         <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
@@ -93,19 +149,22 @@
           <circle cx="7" cy="17" r="3"></circle>
         </svg>
         <span class="tool-label">Customize</span>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </button>
       <button class="tool-button" type="button" data-panel="stats-panel" aria-controls="stats-panel" aria-expanded="false" aria-label="Stats">
         <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
           <path d="M4 20V11M10 20V4M16 20v-6M20 20H4"></path>
         </svg>
         <span class="tool-label">Stats</span>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </button>
       <button class="tool-button" type="button" data-panel="settings-panel" aria-controls="settings-panel" aria-expanded="false" aria-label="Settings">
         <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-          <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M5.64 18.36l2.83-2.83M15.53 8.47l2.83-2.83"></path>
+          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           <circle cx="12" cy="12" r="4"></circle>
         </svg>
         <span class="tool-label">Settings</span>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </button>
       <button class="tool-button" type="button" data-panel="about-panel" aria-controls="about-panel" aria-expanded="false" aria-label="About">
         <svg class="tool-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
@@ -113,6 +172,7 @@
           <path d="M12 10v6M12 7.5h.01"></path>
         </svg>
         <span class="tool-label">About</span>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </button>
     </nav>
 
@@ -123,13 +183,14 @@
             <span>One Button.</span>
             <span class="hero-accent">Endless Curiosity.</span>
           </h1>
-          <p class="hero-support">A tiny experiment in interaction. Press the button and see what happens.</p>
+          <div class="hero-rule" aria-hidden="true"></div>
+          <p class="hero-support">Press it. Feel it. Keep going.</p>
         </section>
 
         <div class="button-area">
           <div class="button-housing">
             <button class="press-button" id="press-button" type="button" aria-label="Press the button" aria-pressed="false">
-              <span id="button-label">PRESS ME</span>
+              <span id="button-label">GLOW</span>
             </button>
             <div class="button-fx button-fx-in" aria-hidden="true"></div>
             <div class="button-fx button-fx-out" aria-hidden="true"></div>
@@ -148,7 +209,7 @@
             <p class="mode-status" id="mode-status" aria-live="polite"></p>
           </div>
 
-          <p class="key-hint" aria-hidden="true">Press <kbd>Space</kbd> to press</p>
+          <p class="key-hint" aria-hidden="true"><kbd>Space</kbd> to press</p>
         </div>
 
         <footer class="site-footer">
@@ -181,10 +242,10 @@
           <div class="control-group">
             <div class="control-label-row">
               <label for="color-picker">Color</label>
-              <output id="color-value">#E53935</output>
+              <output id="color-value">#22D3EE</output>
             </div>
             <div class="color-picker-row">
-              <input id="color-picker" type="color" value="#E53935" aria-label="Choose button color">
+              <input id="color-picker" type="color" value="#22D3EE" aria-label="Choose button color">
               <div class="swatches" role="group" aria-label="Color presets">
                 <button class="swatch" type="button" data-color="#E53935" style="--swatch-color: #E53935" aria-label="Red" title="Red"></button>
                 <button class="swatch" type="button" data-color="#2563EB" style="--swatch-color: #2563EB" aria-label="Blue" title="Blue"></button>
@@ -202,7 +263,7 @@
               <label for="label-input">Label text</label>
               <span class="control-hint">20 characters max</span>
             </div>
-            <input class="text-input" id="label-input" type="text" maxlength="20" placeholder="PRESS ME" autocomplete="off">
+            <input class="text-input" id="label-input" type="text" maxlength="20" placeholder="GLOW" autocomplete="off">
           </div>
 
           <div class="control-group">
@@ -230,9 +291,9 @@
           <div class="control-group">
             <div class="control-label-row">
               <label for="depth-slider">Depth</label>
-              <output id="depth-value">6px</output>
+              <output id="depth-value">10px</output>
             </div>
-            <input class="range-input" id="depth-slider" type="range" min="2" max="16" step="1" value="6">
+            <input class="range-input" id="depth-slider" type="range" min="2" max="16" step="1" value="10">
           </div>
         </section>
 
